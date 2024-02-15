@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather Sans' rel='stylesheet'>
+    <link rel="shortcut icon" href="./Favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Weather App</h1>
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+        <div class="weather-container">
+            <!-- grant location -->
+            <div class="sub-container grant-location-container">
+                <img src="./material/location.png" width="80" height="80" loading="lazy" alt="">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get Weather Information</p>
+                <button class="btn" data-grantAccess>GRANT ACCESS</button>
+            </div>
+
+            <!--Search form-->
+            <form class="form-container" data-searchForm>
+                <input type="text" placeholder="Search For City..." data-searchInput>
+                <button class="btn">
+                    <img src="./material/icons8-search-100.png" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!--loading screen container-->
+            <div class="sub-container loading-container">
+                <img src="./material/loading.gif" width="150" height="150">
+                <p>Loading</p>
+            </div>
+
+            <!--Show weather info-->
+            <div class="sub-container user-info-container">
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+                <p data-weather-desc></p>
+                <img data-weatherIcon>
+                <p data-temp></p>
+                <div class="parameter-container">
+
+                    <div class="parameter">
+                        <img src="./material/wind.png">
+                        <p>WindSpeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <div class="parameter">
+                        <img src="./material/humidity.png">
+                        <p>humidity</p>
+                        <p data-humidity></p>
+                    </div>
+                    <div class="parameter">
+                        <img src="./material/icons8-cloud-100.png">
+                        <p>clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--show Error-->
+            <div class="sub-container error-container">
+                <img src="./material/not-found.png" width="300px" height="300px" alt="">
+                <p>Error Occurred</p>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
