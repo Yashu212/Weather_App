@@ -12,6 +12,17 @@ let currentTab = userTab;
 const API_key = 'd7ec7d08faa649b3391fd94635e33e18';
 currentTab.classList.add("current-tab");
 getfromSessionStorage();
+function updateDateTime() {
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const time = now.toLocaleTimeString();
+    document.getElementById('date').textContent = `${date}`;
+    document.getElementById('time').textContent = `${time}`;
+}
+
+setInterval(updateDateTime, 1000);
+
+updateDateTime();
 userTab.addEventListener('click',() => {
     switchTab(userTab);
 });
@@ -65,6 +76,7 @@ async function fetchUserWeatherInfo(coordinates)
         {
             throw undefined;
         }
+        er.classList.remove("active");
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
         renderWeatherInfo(data);
@@ -146,6 +158,7 @@ async function fetchSearchWeatherInfo(city)
         {
             throw undefined;
         }
+        er.classList.remove("active");
         loadingScreen.classList.remove("active");
         userInfoContainer.classList.add("active");
         renderWeatherInfo(data);
